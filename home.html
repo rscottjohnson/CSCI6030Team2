@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>API Test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card border-dark mb-3">
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">API Testing</h5>
+                        <p class="card-text">Test view for searching food database:</p>
+                        <p class="card-text">
+                        </p>
+                        <!--User provided debug display div-->
+                        <!-- <div class="debugDiv"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6" id="genArea">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Search</h5>
+                        <p class="card-text">Enter search below.</p>
+                        <div class="input-group" id="contentInput">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Content (required)</span>
+                            </div>
+                            <textarea id="content" class="form-control" aria-label="textInput"></textarea>
+                        </div>
+                        <!-- <div class="input-group" id="labelInput">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Label (optional)</span>
+                            </div>
+                            <textarea id="lblText" class="form-control" aria-label="textInput"></textarea>
+                        </div> -->
+                        <a href="#" id="contentSubmit" class="btn btn-primary">Search</a>
+                        <!--User provided debug display div-->
+                        <!-- <div class="debugDiv"></div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Result</h5>
+                        <p class="card-text">View results.</p>
+                        <div id="apiResult"></div>
+                        <!--Div for debug output-->
+                        <!-- <div id="errorDiv"></div> -->
+                        <!-- <div id="qrCodeBody">Some text to see if QR Code is appended or overwrites the div.</div> -->
+                        <!--User provided debug display div-->
+                        <!-- <div class="debugDiv"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- <script type="text/javascript" src="js/jqr.js"></script> -->
+        <script type="text/javascript">
+            // Function to create QR code based on text box input(s)
+            // Needs:
+            // * <textarea> tag with id = content for content input (required)
+            // * <textarea> tag with id = lblText for label input (optional)
+            // * <div> tag with id = qrCodeBody to render the qr code
+            // * button with id contentSubmit for click event
+            // Returns:
+            // * Rendered qr code or error message
+
+            // Execute on button click
+            $('#contentSubmit').click(function () {
+                var upcSearch = $("#content").val();
+                var queryURL = "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc=" + upcSearch;
+                // Perform an AJAX request with the queryURL
+    $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        // After data comes back from the request
+        .then(function (response) {
+            // Create a div to hold the info
+            var label = $("<h5>");
+            var contents = $("<p>");
+
+            // Set a string variable to capture the response text
+            var str = response;
+            var apiLabel = response.hints[0].food.label;
+            var apiFat = response.hints[0].food.nutrients.fat;
+            var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
+            var apiImage = response.hints[0].food.image;
+            console.log(str);
+            // console.log(str);
+            // Set the start and end position of the string
+            // var startPos = str.indexOf("<p>") + "<p>".length;
+            // var endPos = str.indexOf("</p>");
+            // Read the text between the start and end positions
+            // var targetText = str.substring(startPos, endPos).trim();
+
+            // Insert the info
+            label.html(apiLabel);
+            contents.html(apiFoodContentsLabel);
+
+            // Append the wikiDiv to the image div
+            $("#apiResult").append(label);
+            $("#apiResult").append(contents);
+            
+            //console.log({ message: { content: $('#content').val(), label: $('#lblText').val() } })
+                //$('#qrCodeBody').jqrInit({ message: { content: $('#content').val(), label: $('#lblText').val() } });
+                // $('#qrCodeBody').jqrInit({ message: { content: 'hello world', label: 'a label' }, size: 200, fill: '#212F3C', back: '#FDFEFE', fontname: 'arial', fontcolor: '#E74C3C', overwrite: true, debug: '.debugDiv' });
+                //{ message: { content: $('#content').val(), label: $('#lblText').val() } }
+            });
+        });
+        </script>        
+        <!-- From https://larsjung.de/kjua/ -->
+        <!-- <script type="text/javascript" src="js/kjua/kjua-0.6.0.min.js"></script> -->
+</body>
+</html>
