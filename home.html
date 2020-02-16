@@ -28,6 +28,16 @@
                     <div class="card-body">
                         <h5 class="card-title">Search</h5>
                         <p class="card-text">Enter search below.</p>
+                        <!-- Term or upc code indicator -->
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btnUPC btn btn-primary active">
+                              <input type="radio" name="options" id="option1" autocomplete="off" checked>UPC
+                            </label>
+                            <label class="btnTerm btn btn-primary">
+                              <input type="radio" name="options" id="option2" autocomplete="off">Term
+                            </label>
+                          </div>
+                        <!-- Search term entry box -->
                         <div class="input-group" id="contentInput">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Content (required)</span>
@@ -63,34 +73,83 @@
         <script type="text/javascript">
             // Execute on button click
             $('#contentSubmit').click(function () {
-                var upcSearch = $("#content").val();
-                var queryURL = "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc=" + upcSearch;
-                // Perform an AJAX request with the queryURL
+                var itemSearch = escape($("#content").val());
+                var queryURL = "";
+                if ($('.btnUPC').hasClass('active')) {
+                    queryURL = "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc=" + itemSearch;
+                } else {
+                    queryURL = "https://api.edamam.com/api/nutrition-data?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&ingr=" + itemSearch;
+                }
+                
+    // Perform an AJAX request with the queryURL
     $.ajax({
             url: queryURL,
             method: "GET"
         })
         // After data comes back from the request
         .then(function (response) {
-            // Create a div to hold the info
-            var label = $("<h5>");
-            var contents = $("<p>");
 
-            // Set a string variable to capture the response text
-            var str = response;
-            var apiLabel = response.hints[0].food.label;
-            var apiFat = response.hints[0].food.nutrients.fat;
-            var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
-            var apiImage = response.hints[0].food.image;
-            console.log(str);
+            
+            if ($('.btnUPC').hasClass('active')) {
+                // Create a div to hold the info
+                var label = $("<pre>");
+                var contents = $("<p>");
+                
+                // Set a string variable to capture the response text
+                var str = response;
+                console.log(str);
+                var labelData = response.hints[0].food.label; 
+                var apiLabel = JSON.stringify(labelData, null, " ");
+                var fatData = response.hints[0].food.nutrients.fat; 
+                var apiFat = JSON.stringify(fatData, null, " ");
+                var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
+                // var apiFoodContentsLabel = JSON.stringify(foodContentsData, null, " ");
+                var apiImage = response.hints[0].food.image;
 
-            // Insert the info
-            label.html(apiLabel);
-            contents.html(apiFoodContentsLabel);
+                // Insert the info
+                label.html(apiLabel);
+                contents.html(apiFoodContentsLabel);
 
-            // Append the result(s) to the image div
-            $("#apiResult").append(label);
-            $("#apiResult").append(contents);
+                // Append the result(s) to the image div
+                $("#apiResult").append(label);
+                $("#apiResult").append(contents);
+            } else {
+                // Create a div to hold the info
+                var dietInfo = $("<pre>");
+                var healthInfo = $("<pre>");
+
+                // Set a string variable to capture the response text
+                var str = response;
+                console.log(str);
+                // var dietLabelData = [];
+                var dietData = response.dietLabels;
+                var dietLabelData = JSON.stringify(dietData, null, " ");
+                var healthData = response.healthLabels;
+                var healthLabelData = JSON.stringify(healthData, null, " ");
+                // console.log(response.dietLabels);
+                // console.log(response.dietLabels.length);
+                // for (var i=0; i < response.dietLabels.length; i++) {
+                //     dietLabelData.push(response.dietLabels[i]);
+                //     console.log(dietLabelData);
+                // }
+
+                // var healthLabelData = [];
+                console.log(healthLabelData);
+                //   response.healthLabels);
+                // console.log(response.healthLabels.length);
+                // for (var i=0; i < response.healthLabels.length; i++) {
+                //     healthLabelData.push(response.healthLabels[i]);
+                //     console.log(healthLabelData);
+                // }
+
+                // Insert the info
+                dietInfo.html(dietLabelData);
+                healthInfo.html(healthLabelData);
+
+                // Append the result(s) to the image div
+                $("#apiResult").append(dietInfo);
+                $("#apiResult").append(healthInfo);
+            }            
             });
         });
         </script>
