@@ -1,106 +1,114 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>NISSE Home</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
     <div class="container">
         <!-- Navbar -->
         <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Account</a>
+                <a class="nav-link" href="#">Account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link" href="#">Logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Enter Foods</a>
+                <a class="nav-link" href="#">Enter Foods</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
+                <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#signUpModal" href="#">Signup</a>
             </li>
-          </ul>
+        </ul>
 
-          <!-- Sign Up Modal -->
-          <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
+        <!-- Sign Up Modal -->
+        <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Sign up</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Sign up for a new NISSE account.</p>
-                </div>
-                <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sign up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Choose password">
+                    <div class="modal-body">
+                        <p>Sign up for a new NISSE account.</p>
                     </div>
-                    <!-- <div class="form-check">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Choose password">
+                        </div>
+                        <!-- <div class="form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                <!-- <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <!-- <div class="modal-footer">
                   <button type="button" class="btn btn-primary">Save changes</button>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div> -->
-              </div>
+                </div>
             </div>
-          </div>
+        </div>
 
-          <!-- Log In Modal -->
-          <div class="modal" id="loginModal" tabindex="-1" role="dialog">
+        <!-- Log In Modal -->
+        <div class="modal" id="loginModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Log In</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Log in to your NISSE account.</p>
-                </div>
-                <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</!-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
+                    <div class="modal-body">
+                        <p>Log in to your NISSE account.</p>
                     </div>
-                    <!-- <div class="form-check">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</!-->
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Enter password">
+                        </div>
+                        <!-- <div class="form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                <!-- <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <!-- <div class="modal-footer">
                   <button type="button" class="btn btn-primary">Save changes</button>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div> -->
-              </div>
+                </div>
             </div>
-          </div>
-        
+        </div>
+
         <div class="row">
             <div class="col-sm-12">
                 <div class="card border-dark mb-3">
@@ -124,12 +132,12 @@
                         <!-- Term or upc code indicator -->
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btnUPC btn btn-primary active">
-                              <input type="radio" name="options" id="option1" autocomplete="off" checked>UPC
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked>UPC
                             </label>
                             <label class="btnTerm btn btn-primary">
-                              <input type="radio" name="options" id="option2" autocomplete="off">Term
+                                <input type="radio" name="options" id="option2" autocomplete="off">Term
                             </label>
-                          </div>
+                        </div>
                         <!-- Search term entry box -->
                         <div class="input-group" id="contentInput">
                             <div class="input-group-prepend">
@@ -157,94 +165,134 @@
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCKI5yVJ5kHZdRXhkoG9TT4UhvkVUaLm5Y",
+                authDomain: "nisse-ed27f.firebaseapp.com",
+                databaseURL: "https://nisse-ed27f.firebaseio.com",
+                projectId: "nisse-ed27f",
+                storageBucket: "nisse-ed27f.appspot.com",
+                messagingSenderId: "928216397567",
+                appId: "1:928216397567:web:36c0d0c289d57b23637eca"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // make auth and firestore references
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+        </script>
+
+        <!-- jQuery (not sure both are needed; may need to clean up later)         -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+
+        <!-- API call; may need to clean up by moving to its own file later -->
         <script type="text/javascript">
             // Execute on button click
             $('#contentSubmit').click(function () {
                 var itemSearch = escape($("#content").val());
                 var queryURL = "";
                 if ($('.btnUPC').hasClass('active')) {
-                    queryURL = "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc=" + itemSearch;
+                    queryURL =
+                        "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc=" +
+                        itemSearch;
                 } else {
-                    queryURL = "https://api.edamam.com/api/nutrition-data?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&ingr=" + itemSearch;
+                    queryURL =
+                        "https://api.edamam.com/api/nutrition-data?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&ingr=" +
+                        itemSearch;
                 }
-                
-    // Perform an AJAX request with the queryURL
-    $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-        // After data comes back from the request
-        .then(function (response) {
 
-            
-            if ($('.btnUPC').hasClass('active')) {
-                // Create a div to hold the info
-                var label = $("<pre>");
-                var contents = $("<p>");
-                
-                // Set a string variable to capture the response text
-                var str = response;
-                console.log(str);
-                var labelData = response.hints[0].food.label; 
-                var apiLabel = JSON.stringify(labelData, null, " ");
-                var fatData = response.hints[0].food.nutrients.fat; 
-                var apiFat = JSON.stringify(fatData, null, " ");
-                var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
-                // var apiFoodContentsLabel = JSON.stringify(foodContentsData, null, " ");
-                var apiImage = response.hints[0].food.image;
+                // Perform an AJAX request with the queryURL
+                $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                    })
+                    // After data comes back from the request
+                    .then(function (response) {
 
-                // Insert the info
-                label.html(apiLabel);
-                contents.html(apiFoodContentsLabel);
 
-                // Append the result(s) to the image div
-                $("#apiResult").append(label);
-                $("#apiResult").append(contents);
-            } else {
-                // Create a div to hold the info
-                var dietInfo = $("<pre>");
-                var healthInfo = $("<pre>");
+                        if ($('.btnUPC').hasClass('active')) {
+                            // Create a div to hold the info
+                            var label = $("<pre>");
+                            var contents = $("<p>");
 
-                // Set a string variable to capture the response text
-                var str = response;
-                console.log(str);
-                // var dietLabelData = [];
-                var dietData = response.dietLabels;
-                var dietLabelData = JSON.stringify(dietData, null, " ");
-                var healthData = response.healthLabels;
-                var healthLabelData = JSON.stringify(healthData, null, " ");
-                // console.log(response.dietLabels);
-                // console.log(response.dietLabels.length);
-                // for (var i=0; i < response.dietLabels.length; i++) {
-                //     dietLabelData.push(response.dietLabels[i]);
-                //     console.log(dietLabelData);
-                // }
+                            // Set a string variable to capture the response text
+                            var str = response;
+                            console.log(str);
+                            var labelData = response.hints[0].food.label;
+                            var apiLabel = JSON.stringify(labelData, null, " ");
+                            var fatData = response.hints[0].food.nutrients.fat;
+                            var apiFat = JSON.stringify(fatData, null, " ");
+                            var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
+                            // var apiFoodContentsLabel = JSON.stringify(foodContentsData, null, " ");
+                            var apiImage = response.hints[0].food.image;
 
-                // var healthLabelData = [];
-                console.log(healthLabelData);
-                //   response.healthLabels);
-                // console.log(response.healthLabels.length);
-                // for (var i=0; i < response.healthLabels.length; i++) {
-                //     healthLabelData.push(response.healthLabels[i]);
-                //     console.log(healthLabelData);
-                // }
+                            // Insert the info
+                            label.html(apiLabel);
+                            contents.html(apiFoodContentsLabel);
 
-                // Insert the info
-                dietInfo.html(dietLabelData);
-                healthInfo.html(healthLabelData);
+                            // Append the result(s) to the image div
+                            $("#apiResult").append(label);
+                            $("#apiResult").append(contents);
+                        } else {
+                            // Create a div to hold the info
+                            var dietInfo = $("<pre>");
+                            var healthInfo = $("<pre>");
 
-                // Append the result(s) to the image div
-                $("#apiResult").append(dietInfo);
-                $("#apiResult").append(healthInfo);
-            }            
+                            // Set a string variable to capture the response text
+                            var str = response;
+                            console.log(str);
+                            // var dietLabelData = [];
+                            var dietData = response.dietLabels;
+                            var dietLabelData = JSON.stringify(dietData, null, " ");
+                            var healthData = response.healthLabels;
+                            var healthLabelData = JSON.stringify(healthData, null, " ");
+                            // console.log(response.dietLabels);
+                            // console.log(response.dietLabels.length);
+                            // for (var i=0; i < response.dietLabels.length; i++) {
+                            //     dietLabelData.push(response.dietLabels[i]);
+                            //     console.log(dietLabelData);
+                            // }
+
+                            // var healthLabelData = [];
+                            console.log(healthLabelData);
+                            //   response.healthLabels);
+                            // console.log(response.healthLabels.length);
+                            // for (var i=0; i < response.healthLabels.length; i++) {
+                            //     healthLabelData.push(response.healthLabels[i]);
+                            //     console.log(healthLabelData);
+                            // }
+
+                            // Insert the info
+                            dietInfo.html(dietLabelData);
+                            healthInfo.html(healthLabelData);
+
+                            // Append the result(s) to the image div
+                            $("#apiResult").append(dietInfo);
+                            $("#apiResult").append(healthInfo);
+                        }
+                    });
             });
-        });
         </script>
 </body>
+
 </html>
