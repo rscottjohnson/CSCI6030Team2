@@ -40,3 +40,7 @@ $("#loginSubmit").on("click", (e) => {
 });
 
 // logout
+$("#logoutSubmit").on("click", (e) => {
+    e.preventDefault();
+    auth.signOut();
+});
