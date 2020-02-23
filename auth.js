@@ -22,3 +22,21 @@ $("#signupSubmit").on("click", (e) => {
         $("#signUpModal").modal("hide");
     });
 });
+
+// login
+$("#loginSubmit").on("click", (e) => {
+    e.preventDefault();
+
+    // get user info
+    var email = $("#login-email").val();
+    var password = $("#login-password").val();
+
+    // signup user
+    auth.signInWithEmailAndPassword(email, password).then(cred => {
+        console.log(cred.user);
+        $("#loginModal").find("form").trigger("reset");
+        $("#loginModal").modal("hide");
+    });
+});
+
+// logout
