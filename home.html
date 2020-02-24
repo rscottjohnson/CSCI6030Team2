@@ -6,7 +6,7 @@
     <title>NISSE Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <!-- Navbar -->
         <ul class="nav">
             <li class="nav-item logged-in" style="display:none">
-                <a class="nav-link" href="#">Account</a>
+                <a class="nav-link" data-toggle="modal" data-target="#accountModal" href="#">Account</a>
             </li>
             <li class="nav-item logged-in" style="display:none">
                 <a class="nav-link" id="logoutSubmit" href="#">Logout</a>
@@ -56,16 +56,11 @@
                             <input type="password" class="form-control" id="signup-password"
                                 placeholder="Choose password">
                         </div>
-                        <!-- <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div> -->
-                        <!-- <button type="submit" class="btn btn-primary">Submit</!-->
                     </form>
                     <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary" id="signupSubmit">Sign Up</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                        <button type="submit" class="btn btn-primary" id="signupSubmit">Sign Up</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,25 +81,40 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="login-email"
-                                aria-describedby="emailHelp" placeholder="Enter email">
-                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</!-->
+                            <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp"
+                                placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="login-password"
                                 placeholder="Enter password">
                         </div>
-                        <!-- <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div> -->
-                        <!-- <button type="submit" class="btn btn-primary">Submit</!-->
                     </form>
                     <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" id="loginSubmit">Login</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="loginSubmit">Login</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Account Modal -->
+        <div class="modal" id="accountModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Account Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>NISSE Account</h4>
+                        <div class="accountDetails"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,8 +127,6 @@
                         <p class="card-text">Test view for searching food database:</p>
                         <p class="card-text">
                         </p>
-                        <!--User provided debug display div-->
-                        <!-- <div class="debugDiv"></div> -->
                     </div>
                 </div>
             </div>
@@ -146,8 +154,6 @@
                             <textarea id="content" class="form-control" aria-label="textInput"></textarea>
                         </div>
                         <a href="#" id="contentSubmit" class="btn btn-primary">Search</a>
-                        <!--User provided debug display div-->
-                        <!-- <div class="debugDiv"></div> -->
                     </div>
                 </div>
             </div>
@@ -157,10 +163,6 @@
                         <h5 class="card-title">Result</h5>
                         <p class="card-text">View results.</p>
                         <div id="apiResult"></div>
-                        <!--Div for debug output-->
-                        <!-- <div id="errorDiv"></div> -->
-                        <!--User provided debug display div-->
-                        <!-- <div class="debugDiv"></div> -->
                     </div>
                 </div>
             </div>
@@ -193,17 +195,17 @@
             const db = firebase.firestore();
         </script>
 
-<!-- jQuery (not sure both are needed; may need to clean up later)         -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        <!-- jQuery (not sure both are needed; may need to clean up later)         -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
         </script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
         <!-- Compiled and minified JavaScript -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-        <script src="auth.js"></script>
-        <script src="index.js"></script>
+        <script src="assets/javascript/auth.js"></script>
+        <script src="assets/javascript/home.js"></script>
 
         <!-- Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
