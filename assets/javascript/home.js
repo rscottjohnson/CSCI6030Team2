@@ -14,3 +14,21 @@ const setupUI = (user) => {
         loggedOutLinks.forEach(item => item.style.display = 'block');
     }
 }
+
+// getting data
+db.collection('upcScans').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        // console.log(doc.data());
+    })
+})
+
+// saving data
+$("#upcScanSubmit").on("click", (e) => {
+    e.preventDefault();
+    db.collection('upcScans').add({
+        upc: $('#upcCode').html(),
+        label: $('#upcLabel').html(),
+        brand: $('#upcBrand').html(),
+        category: $('#upcCategory').html()
+    })
+})
