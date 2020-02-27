@@ -255,20 +255,12 @@
                             var str = response;
                             console.log(str);
                             var upcData = response.text;
-                            // var apiUPC = JSON.stringify(upcData, null, " ");
-                            // var apiUPCfin = apiUPC.replace(":", " ");
-                            // console.log(upcData);
-                            // console.log(apiUPCfin);
                             var labelData = response.hints[0].food.label;
-                            // var apiLabel = JSON.stringify(labelData, null, " ");
                             var brandData = response.hints[0].food.brand;
-                            // var apiBrand = JSON.stringify(brandData, null, " ");
                             var categoryData = response.hints[0].food.category;
-                            // var apiCategory = JSON.stringify(categoryData, null, " ");
                             var fatData = response.hints[0].food.nutrients.fat;
                             var apiFat = JSON.stringify(fatData, null, " ");
                             var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
-                            // var apiFoodContentsLabel = JSON.stringify(foodContentsData, null, " ");
                             var apiImage = response.hints[0].food.image;
 
                             // Insert the info

@@ -25,8 +25,6 @@ db.collection('upcScans').get().then((snapshot) => {
 // saving data
 $("#upcScanSubmit").on("click", (e) => {
     e.preventDefault();
-    // console.log($('#label').val());
-    // console.log($('#label').html());
     db.collection('upcScans').add({
         upc: $('#upcCode').html(),
         label: $('#upcLabel').html(),
