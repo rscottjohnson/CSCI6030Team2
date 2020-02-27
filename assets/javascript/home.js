@@ -18,7 +18,7 @@ const setupUI = (user) => {
 // getting data
 db.collection('upcScans').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
-        console.log(doc.data());
+        // console.log(doc.data());
     })
 })
 
