@@ -1,0 +1,24 @@
+
+<div>
+
+<div fxFlex="40" >
+   <div fxFlex>
+     <mat-list *ngFor = "let teamleader of teamleaders" [@visibility]="visibility"  [@expand]>
+         <mat-list-item>
+            <div layout="row" layout-wrap>
+
+                <p matline> <span>{{baseURL + teamleader.image}}</span></p>
+
+
+                 <p matline> <span>{{teamleader.name}} {{teamleader.abbr}}</span></p>
+                 <p matline> <span>{{teamleader.designation}}</span></p>
+                 <p matline> <span>{{teamleader.description}}</span></p>
+
+           </div>
+         </mat-list-item>
+     </mat-list>
+  </div>
+</div>
+
+</div>
+
