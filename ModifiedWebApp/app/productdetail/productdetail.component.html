@@ -1,0 +1,127 @@
+<div class="container"
+    fxLayout="column"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+
+<div fxFlex = "40" *ngIf = "product" [@visibility]="visibility">
+  <div>
+    <mat-card >
+      <mat-card-header>
+        <mat-card-title>
+           <h3 *ngIf = "product">{{ product.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{ baseURL + product.image} }" alt={{product.name}}>
+      <mat-card-content>
+        <p>{{ product.description }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink] = "['/productdetail', prev]"><span class = "fa fa-chevron-left fa-lg"></span>
+        </button>
+        <button mat-button (click)= "goBack()">BACK</button>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+        <span class = "flex-spacer"></span>
+        <button mat-button [routerLink] = "['/productdetail', next]"><span class = "fa fa-chevron-right fa-lg"></span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    </div>
+</div>
+
+<div>
+ <div fxFlex [hidden]="product || errMess">
+   <mat-spinner></mat-spinner><h4>Loading...Please wait.</h4>
+ </div>
+</div>
+
+<div>
+<div fxFlex="40" *ngIf = "product" [@visibility]="visibility"  [@expand]>
+  <div>
+     <mat-list >
+         <mat-list-item *ngIf = "product">
+           <h3> Comments </h3>
+         </mat-list-item>
+         <mat-list-item  *ngFor ="let feedback of product.comments" [@visibility] = "visibility">
+         <h4 matLine>
+         {{feedback.comment}}
+          </h4>
+         <p matLine>
+         <span> {{feedback.rating}} Stars </span>
+          </p>
+         <p matLine>
+         <span> --{{feedback.author}} {{feedback.date | date}} </span>
+          </p>
+         </mat-list-item>
+
+         <mat-list-item>
+           <div [hidden] = !commentForm.valid>
+            <p matLine>
+            <span>{{ commentForm.value.comment}}</span>
+            </p>
+            <p matLine>
+            <span>{{ commentForm.value.rating}} Stars </span>
+            </p>
+            <p matLine>
+            <span>-- {{ commentForm.value.author}}</span>
+            </p>
+           </div>
+         </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+
+
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+
+ <div fxFlex  fxFlexOffset = "20px" class = "form-size"  *ngIf = "product"  [@expand]>
+      <h3>Send us your Comments on This Product</h3>
+
+      <form novalidate [formGroup]="commentForm" #cform = "ngForm" (ngSubmit) = "onSubmit()">
+      <p>
+        <mat-form-field class="half-width" required>
+          <input matInput ngModel class = "form-control" formControlName="author" name = "author" placeholder="Your Name" type="text" required>
+          <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
+        </mat-form-field>
+      </p>
+      <table class = "form-size">
+          <td>
+            <mat-slider formControlName = "rating" name = "rating" thumbLabel [(ngModel)]="value" tickInterval = "1" min = "0" max = "5" step = "1" value = '5' required>Rating</mat-slider>
+          </td>
+      </table>
+      <p>
+        <mat-form-field class = "full-width">
+          <textarea matInput formControlName="comment" name = "comment" placeholder = "Your Comments" rows = 7 required>
+          </textarea>
+          <mat-error *ngIf="formErrors.comment">
+              {{formErrors.comment}}
+          </mat-error>
+        </mat-form-field>
+        <span class="flex-spacer"></span>
+         <button type="submit" mat-button [disabled]="!commentForm.valid"  class="background-primary text-floral-white" >Submit</button>
+      </p>
+    </form>
+</div>
+
+
+<div>
+ <div fxFlex [hidden]="product || errMess">
+   <mat-spinner></mat-spinner><h4>Loading...Please wait.</h4>
+ </div>
+</div>
+
+</div>
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+</div>
+
+

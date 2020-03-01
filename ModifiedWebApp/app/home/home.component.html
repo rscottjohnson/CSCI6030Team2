@@ -1,0 +1,48 @@
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+
+
+<mat-card *ngIf="product" fxFlex [@expand]>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>{{ product.name | uppercase}}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{ baseURL + product.image }}" alt={{product.name}}>
+  <mat-card-content>
+    <p>{{product.description}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+</div>
+  <div [hidden]="product || productErrMess">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+
+
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{productErrMess}}</h4>
+</div>
+
+
+
+ <div>
+  <div [hidden]="teammember  || teammemberErrMess">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+
+  <div fxFlex *ngIf="teammemberErrMess">
+    <h2>Error</h2>
+    <h4>{{teammemberErrMess}}</h4>
+  </div>
+ </div>
+</div>
+
+</div>
