@@ -1,0 +1,72 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+        <h3>About Us</h3>
+        <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <div fxLayout="column" fxLayout.gt-sm="row">
+      <div fxFlex="70">
+        <h2>Our Mission</h2>
+        <p>Started in 2020, NISSE started as a project for CSCI 6030 Information Retrieval and Extraction with Professor Tabrizi at ECU. The idea behind NISSE was to provide users with a tool that they could use to learn more about the ingredients in the foods they interact with and provide the user of this tool with a way to query a database quickly to meet their objective. </p>
+      </div>
+      <div fxFlex="30">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+            <h2>Facts At a Glance</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <dl>
+              <dt>Started</dt>
+              <dd>Jan. 20, 2020</dd>
+              <dt>Project Team Members</dt>
+              <dd>6 grad students</dd>
+            </dl>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-card>
+      <blockquote>
+        <h3>"May contain traces of" ... </h3>
+        <footer>
+        </footer>
+      </blockquote>
+    </mat-card>
+  </div>
+
+
+<div fxFlex *ngIf="teammembers" [@expand]>
+    <h2>Project Team Members</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let teammember of teammembers" [routerLink]="['/teammemberdetail', teammember.id]">
+        <img src= "{{baseURL + teammember.image}}" alt="{{teammember.name}}" appHighlight>
+        <p matLine>{{teammember.name}} {{teammember.abbr}}</p>
+        <p matLine>{{teammember.designation}}</p>
+        <p matLine>{{teammember.description}}</p>
+      </mat-list-item>
+    </mat-list>
+</div>
+
+<div>
+ <div fxFlex [hidden]="teammembers || teammembersErrMess">
+   <mat-spinner></mat-spinner><h4>Loading...Please wait.</h4>
+ </div>
+</div>
+
+ <div fxFlex *ngIf="teammembersErrMess">
+    <h2>Error</h2>
+    <h4>{{teammembersErrMess}}</h4>
+</div>
+
+</div>
