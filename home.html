@@ -240,11 +240,8 @@
             var respArrayNum = 0;
             // set a variable to calculate the current time
             var dt = new Date();
-            var utcDate = dt.toUTCString();
+            // convert the date format to eastern US time zone
             var estDate = dt.toLocaleString("en-US", {timeZone:"America/New_York"});
-            console.log(utcDate);
-            console.log(estDate);
-            // console.log(user);
 
             // if the first character is a number treat as a UPC code, else treat as a term...
             if (!isNaN(itemSearch.charAt(0))) {
@@ -257,7 +254,6 @@
                 queryURL =
                     "https://api.edamam.com/api/food-database/parser?nutrition-type=logging&category=packaged-foods&categoryLabel=food&ingr=" +
                     itemSearch + "&app_id=a3ff7089&app_key=41e4887a97f837312663c573bc186cbb"
-                // console.log(queryURL);
                 respArrayNum = 1;
             }
 
@@ -271,17 +267,10 @@
 
                     // Create a div to hold the info
                     var code = $('#apiUPCTerm');
-                    // code.attr('id', 'upcCode');
                     var label = $('#apiLabel');
-                    // label.attr('id', 'upcLabel');
                     var brand = $('#apiBrand');
-                    // brand.attr('id', 'upcBrand');
                     var category = $('#apiCategory');
-                    // category.attr('id', 'upcCategory');
-
-                    // var contents = $("<p>");
                     var contents = $('#apiContents');
-                    // contents.attr('id', 'upcContents');
 
                     // Set a string variable to capture the response text
                     var str = response;
@@ -302,14 +291,6 @@
                     category.html(categoryData);
                     contents.html(apiFoodContentsLabel);
                     $('#timeStamp').html(estDate);
-
-                    // Append the result(s) to the image div
-                    // $("#apiUPCTerm").append(code);
-                    // $("#apiLabel").append(label);
-                    // $("#apiBrand").append(brand);
-                    // $("#apiCategory").append(category);
-                    // $("#apiContents").append(contents);
-                    // $("#timeStamp").append(utcDate);
                 });
         });
     </script>
