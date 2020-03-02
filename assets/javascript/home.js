@@ -5,6 +5,7 @@ const setupUI = (user) => {
     if (user) {
         // account info
         $('.accountDetails').html(`<div>Logged in as: ${user.email}</div>`);
+        $('#userEmail').html(user.email);
         loggedInLinks.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none');
     } else {
@@ -16,19 +17,22 @@ const setupUI = (user) => {
 }
 
 // getting data
-db.collection('upcScans').get().then((snapshot) => {
+db.collection('userSavedSearches').where('user', '==', 'test@test.com').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
-        // console.log(doc.data());
+        console.log(doc.data());
     })
 })
 
 // saving data
-$("#upcScanSubmit").on("click", (e) => {
+$("#searchSubmit").on("click", (e) => {
     e.preventDefault();
-    db.collection('upcScans').add({
-        upc: $('#upcCode').html(),
-        label: $('#upcLabel').html(),
-        brand: $('#upcBrand').html(),
-        category: $('#upcCategory').html()
+    db.collection('userSavedSearches').add({
+        user: $('#userEmail').html(),
+        upcTerm: $('#apiUPCTerm').html(),
+        label: $('#apiLabel').html(),
+        brand: $('#apiBrand').html(),
+        category: $('#apiCategory').html(),
+        contents: $('#apiContents').html(),
+        timeStamp: $('#timeStamp').html()
     })
 })

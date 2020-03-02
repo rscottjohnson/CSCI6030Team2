@@ -48,3 +48,7 @@
 .btn-click-action:hover {
     background-color: #15781B;
 }
+
+pre {
+    white-space: pre-wrap;
+}
