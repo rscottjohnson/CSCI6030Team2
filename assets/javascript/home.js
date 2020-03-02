@@ -17,7 +17,7 @@ const setupUI = (user) => {
 }
 
 // getting data
-db.collection('upcScans').where('label', '==', 'ORGANIC BLUE CORN TORTILLA CHIPS').get().then((snapshot) => {
+db.collection('userSavedSearches').where('user', '==', 'test@test.com').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         console.log(doc.data());
     })
