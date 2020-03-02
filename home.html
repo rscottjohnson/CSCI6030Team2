@@ -219,14 +219,34 @@
             $('#contentSubmit').click(function () {
                 var itemSearch = escape($("#content").val());
                 var queryURL = "";
-                if ($('.btnUPC').hasClass('active')) {
+                // if the UPC button is selected...
+                // if ($('.btnUPC').hasClass('active')) {
+                // queryURL =
+                // "https://api.edamam.com/api/nutrition-data?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&ingr=" +
+                // itemSearch;
+                // "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc=" +
+                // itemSearch;
+                // } else {
+                // queryURL =
+                // "https://api.edamam.com/api/nutrition-data?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&ingr=" +
+                // itemSearch;
+                // }
+
+                // if the first character is a number treat as a UPC code, else treat as a term...
+                if (!isNaN(itemSearch.charAt(0))) {
+                    console.log(itemSearch.charAt(0) + " this should be a number!");
                     queryURL =
-                        "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc=" +
+                        // "https://api.edamam.com/api/food-database/parser?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&upc="
+                        "https://api.edamam.com/api/food-database/parser?app_id=a3ff7089&app_key=41e4887a97f837312663c573bc186cbb&upc=" +
                         itemSearch;
                 } else {
+                    // console.log(escape($("#content").val()) + itemSearch.charAt(0) + " this should be a letter!");
+                    console.log(itemSearch + " " + itemSearch.charAt(0) + " this should be a letter!");
                     queryURL =
-                        "https://api.edamam.com/api/nutrition-data?app_id=bf8ea370&app_key=7e63897a099fbb487636c3a7c1cdabce&ingr=" +
-                        itemSearch;
+                        // "https://api.edamam.com/api/food-database/parser?nutrition-type=logging&category=generic-foods&ingr=red%20apple&app_id=a3ff7089&app_key=41e4887a97f837312663c573bc186cbb"
+                        "https://api.edamam.com/api/food-database/parser?nutrition-type=logging&category=packaged-foods&categoryLabel=food&ingr=" + itemSearch + "&app_id=a3ff7089&app_key=41e4887a97f837312663c573bc186cbb"
+                        // 'https://api.edamam.com/api/food-database/parser?nutrition-type=logging&ingr=red%20apple&app_id={your app_id}&app_key={your app_key}'
+                        console.log(queryURL);
                 }
 
                 // Perform an AJAX request with the queryURL
@@ -238,82 +258,82 @@
                     .then(function (response) {
 
 
-                        if ($('.btnUPC').hasClass('active')) {
-                            // Create a div to hold the info
-                            var upcCode = $("<pre>");
-                            upcCode.attr('id', 'upcCode');
-                            var label = $("<pre>");
-                            label.attr('id', 'upcLabel');
-                            var brand = $("<pre>");
-                            brand.attr('id', 'upcBrand');
-                            var category = $("<pre>");
-                            category.attr('id', 'upcCategory');
+                        // if ($('.btnUPC').hasClass('active')) {
+                        // Create a div to hold the info
+                        var upcCode = $("<pre>");
+                        upcCode.attr('id', 'upcCode');
+                        var label = $("<pre>");
+                        label.attr('id', 'upcLabel');
+                        var brand = $("<pre>");
+                        brand.attr('id', 'upcBrand');
+                        var category = $("<pre>");
+                        category.attr('id', 'upcCategory');
 
-                            var contents = $("<p>");
+                        var contents = $("<p>");
 
-                            // Set a string variable to capture the response text
-                            var str = response;
-                            console.log(str);
-                            var upcData = response.text;
-                            var labelData = response.hints[0].food.label;
-                            var brandData = response.hints[0].food.brand;
-                            var categoryData = response.hints[0].food.category;
-                            var fatData = response.hints[0].food.nutrients.fat;
-                            var apiFat = JSON.stringify(fatData, null, " ");
-                            var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
-                            var apiImage = response.hints[0].food.image;
+                        // Set a string variable to capture the response text
+                        var str = response;
+                        console.log(str);
+                        // var upcData = response.text;
+                        var labelData = response.hints[0].food.label;
+                        var brandData = response.hints[0].food.brand;
+                        var categoryData = response.hints[0].food.category;
+                        var fatData = response.hints[0].food.nutrients.fat;
+                        var apiFat = JSON.stringify(fatData, null, " ");
+                        var apiFoodContentsLabel = response.hints[0].food.foodContentsLabel;
+                        var apiImage = response.hints[0].food.image;
 
-                            // Insert the info
-                            upcCode.html(upcData.replace("upc:", ""));
-                            label.html(labelData);
-                            brand.html(brandData);
-                            category.html(categoryData);
+                        // Insert the info
+                        // upcCode.html(upcData.replace("upc:", ""));
+                        label.html(labelData);
+                        brand.html(brandData);
+                        category.html(categoryData);
 
-                            contents.html(apiFoodContentsLabel);
+                        contents.html(apiFoodContentsLabel);
 
-                            // Append the result(s) to the image div
-                            $("#apiResult").append(upcCode);
-                            $("#apiResult").append(label);
-                            $("#apiResult").append(brand);
-                            $("#apiResult").append(category);
-                            $("#apiResult").append(contents);
-                        } else {
-                            // Create a div to hold the info
-                            var dietInfo = $("<pre>");
-                            var healthInfo = $("<pre>");
+                        // Append the result(s) to the image div
+                        // $("#apiResult").append(upcCode);
+                        $("#apiResult").append(label);
+                        $("#apiResult").append(brand);
+                        $("#apiResult").append(category);
+                        $("#apiResult").append(contents);
+                        // } else {
+                        // Create a div to hold the info
+                        // var dietInfo = $("<pre>");
+                        // var healthInfo = $("<pre>");
 
-                            // Set a string variable to capture the response text
-                            var str = response;
-                            console.log(str);
-                            // var dietLabelData = [];
-                            var dietData = response.dietLabels;
-                            var dietLabelData = JSON.stringify(dietData, null, " ");
-                            var healthData = response.healthLabels;
-                            var healthLabelData = JSON.stringify(healthData, null, " ");
-                            // console.log(response.dietLabels);
-                            // console.log(response.dietLabels.length);
-                            // for (var i=0; i < response.dietLabels.length; i++) {
-                            //     dietLabelData.push(response.dietLabels[i]);
-                            //     console.log(dietLabelData);
-                            // }
+                        // Set a string variable to capture the response text
+                        // var str = response;
+                        // console.log(str);
+                        // var dietLabelData = [];
+                        // var dietData = response.dietLabels;
+                        // var dietLabelData = JSON.stringify(dietData, null, " ");
+                        // var healthData = response.healthLabels;
+                        // var healthLabelData = JSON.stringify(healthData, null, " ");
+                        // console.log(response.dietLabels);
+                        // console.log(response.dietLabels.length);
+                        // for (var i=0; i < response.dietLabels.length; i++) {
+                        //     dietLabelData.push(response.dietLabels[i]);
+                        //     console.log(dietLabelData);
+                        // }
 
-                            // var healthLabelData = [];
-                            console.log(healthLabelData);
-                            //   response.healthLabels);
-                            // console.log(response.healthLabels.length);
-                            // for (var i=0; i < response.healthLabels.length; i++) {
-                            //     healthLabelData.push(response.healthLabels[i]);
-                            //     console.log(healthLabelData);
-                            // }
+                        // var healthLabelData = [];
+                        // console.log(healthLabelData);
+                        //   response.healthLabels);
+                        // console.log(response.healthLabels.length);
+                        // for (var i=0; i < response.healthLabels.length; i++) {
+                        //     healthLabelData.push(response.healthLabels[i]);
+                        //     console.log(healthLabelData);
+                        // }
 
-                            // Insert the info
-                            dietInfo.html(dietLabelData);
-                            healthInfo.html(healthLabelData);
+                        // Insert the info
+                        // dietInfo.html(dietLabelData);
+                        // healthInfo.html(healthLabelData);
 
-                            // Append the result(s) to the image div
-                            $("#apiResult").append(dietInfo);
-                            $("#apiResult").append(healthInfo);
-                        }
+                        // Append the result(s) to the image div
+                        // $("#apiResult").append(dietInfo);
+                        // $("#apiResult").append(healthInfo);
+                        // }
                     });
             });
         </script>
