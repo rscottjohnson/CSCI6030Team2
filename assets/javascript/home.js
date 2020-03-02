@@ -5,6 +5,7 @@ const setupUI = (user) => {
     if (user) {
         // account info
         $('.accountDetails').html(`<div>Logged in as: ${user.email}</div>`);
+        $('#userEmail').html(user.email);
         loggedInLinks.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none');
     } else {
@@ -23,12 +24,15 @@ db.collection('upcScans').where('label', '==', 'ORGANIC BLUE CORN TORTILLA CHIPS
 })
 
 // saving data
-$("#upcScanSubmit").on("click", (e) => {
+$("#searchSubmit").on("click", (e) => {
     e.preventDefault();
-    db.collection('upcScans').add({
-        upc: $('#upcCode').html(),
-        label: $('#upcLabel').html(),
-        brand: $('#upcBrand').html(),
-        category: $('#upcCategory').html()
+    db.collection('userSavedSearches').add({
+        user: $('#userEmail').html(),
+        upcTerm: $('#apiUPCTerm').html(),
+        label: $('#apiLabel').html(),
+        brand: $('#apiBrand').html(),
+        category: $('#apiCategory').html(),
+        contents: $('#apiContents').html(),
+        timeStamp: $('#timeStamp').html()
     })
 })
