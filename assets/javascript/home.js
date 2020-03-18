@@ -6,11 +6,13 @@ const setupUI = (user) => {
         // account info
         $('.accountDetails').html(`<div>Logged in as: ${user.email}</div>`);
         $('#userEmail').html(user.email);
+        $('#searchSubmit').show();
         loggedInLinks.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none');
     } else {
         // hide account info
         $('.accountDetails').html('');
+        $('#searchSubmit').hide();
         loggedInLinks.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block');
     }
