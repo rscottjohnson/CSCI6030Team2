@@ -52,3 +52,8 @@
 pre {
     white-space: pre-wrap;
 }
+
+.loginError {
+    color: #EC7063;
+    text-align: center;
+}

@@ -38,6 +38,9 @@ $("#loginSubmit").on("click", (e) => {
         console.log(cred.user);
         $("#loginModal").find("form").trigger("reset");
         $("#loginModal").modal("hide");
+        $(".loginError").html("");
+    }).catch(err => {
+        $(".loginError").html(err.message);
     });
 });
 
