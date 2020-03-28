@@ -6,8 +6,9 @@
     <title>NISSE Home</title>
     <!-- Edamam attribution -->
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
@@ -172,9 +173,61 @@
                             <div id="apiContentsLabel">Contents: </div>
                             <pre id="apiContents"></pre>
                             <div id="timeStamp"></div>
+                            <!-- Group of default radios - option 1 -->
+                            <div class="custom-control custom-radio logged-in">
+                                <input type="radio" class="custom-control-input" id="defaultGroupExample1"
+                                    name="groupOfDefaultRadios">
+                                <label class="custom-control-label successLabel" for="defaultGroupExample1">These
+                                    results are relevant</label>
+                            </div>
+
+                            <!-- Group of default radios - option 2 -->
+                            <div class="custom-control custom-radio logged-in">
+                                <input type="radio" class="custom-control-input" id="defaultGroupExample2"
+                                    name="groupOfDefaultRadios">
+                                <label class="custom-control-label failLabel" for="defaultGroupExample2">These results
+                                    are nonrelevant</label>
+                            </div>
+
+                            <!-- Group of default radios - option 3 -->
+                            <div class="custom-control custom-radio logged-in">
+                                <input type="radio" class="custom-control-input" id="defaultGroupExample3"
+                                    name="groupOfDefaultRadios" checked>
+                                <label class="custom-control-label neutralLabel"
+                                    for="defaultGroupExample3">Neutral</label>
+                            </div>
+                            <!-- Comment area for user free text feedback -->
+                            <div class="input-group commentBox">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Comments (optional)</span>
+                                </div>
+                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                            </div>
+                            <!-- Dropdown button for feedback on reaction (if any) -->
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Reaction Severity (select if any):
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">None</a>
+                                    <a class="dropdown-item" href="#">Mild</a>
+                                    <a class="dropdown-item" href="#">Moderate</a>
+                                    <a class="dropdown-item" href="#">Severe</a>
+                                </div>
+                            </div> -->
+                            <div class="htmlDropdown">
+                                <h6 id="dropdownLabel">Reaction Severity (select if any):</h6>
+                                <select class="bootstrap-select">
+                                    <option value="1" selected="selected">None</option>
+                                    <option value="2">Mild</option>
+                                    <option value="3">Moderate</option>
+                                    <option value="4">Severe</option>
+                                  </select>
+                            </div>
                         </div>
                         <br>
-                        <a href="#" id="searchSubmit" class="btn btn-primary">Save Search</a>
+                        <a href="#" id="searchSubmit" class="btn btn-primary logged-in">Save Search</a>
                     </div>
                 </div>
             </div>
@@ -209,21 +262,20 @@
         const db = firebase.firestore();
     </script>
 
-    <!-- jQuery (not sure both are needed; may need to clean up later)         -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
     <!-- Compiled and minified JavaScript -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="assets/javascript/auth.js"></script>
     <script src="assets/javascript/home.js"></script>
 
     <!-- Bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
     <!-- API call; may need to clean up by moving to its own file later -->

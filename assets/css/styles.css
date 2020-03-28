@@ -57,3 +57,30 @@ pre {
     color: #EC7063;
     text-align: center;
 }
+
+.commentBox {
+    margin: 20px 0px 10px 0px;
+}
+
+.custom-radio {
+    margin: 5px 0px 5px 0px;
+}
+
+.successLabel {
+    color: #1D8348;
+    background-color: #D5F5E3;
+}
+
+.failLabel {
+    color: #E74C3C;
+    background-color: #FADBD8;
+}
+
+.neutralLabel {
+    /* color: #F1C40F; */
+    background-color: #EAECEE;
+}
+
+.htmlDropdown {
+    margin: 15px 0px 5px 0px;
+}
