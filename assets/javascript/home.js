@@ -21,7 +21,7 @@ const setupUI = (user) => {
 }
 
 // getting data
-db.collection('userSavedSearches').where('user', '==', 'blah@blah.com').get().then((snapshot) => {
+db.collection('userSavedSearches').where('brand', '==', 'Jif').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         console.log(doc.data());
     })
@@ -37,6 +37,8 @@ $("#searchSubmit").on("click", (e) => {
         brand: $('#apiBrand').html(),
         category: $('#apiCategory').html(),
         contents: $('#apiContents').html(),
-        timeStamp: $('#timeStamp').html()
+        timeStamp: $('#timeStamp').html(),
+        comment: $('#commentText').val(),
+        reaction: $('#severityDD option:selected').text()
     })
 })

@@ -201,7 +201,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Comments (optional)</span>
                                 </div>
-                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                <textarea class="form-control" id="commentText" aria-label="With textarea"></textarea>
                             </div>
                             <!-- Dropdown button for feedback on reaction (if any) -->
                             <!-- <div class="dropdown">
@@ -218,12 +218,12 @@
                             </div> -->
                             <div class="htmlDropdown">
                                 <h6 id="dropdownLabel">Reaction Severity (select if any):</h6>
-                                <select class="bootstrap-select">
+                                <select class="bootstrap-select" id="severityDD">
                                     <option value="1" selected="selected">None</option>
                                     <option value="2">Mild</option>
                                     <option value="3">Moderate</option>
                                     <option value="4">Severe</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <br>
@@ -262,21 +262,23 @@
         const db = firebase.firestore();
     </script>
 
-    <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-    <script src="assets/javascript/auth.js"></script>
-    <script src="assets/javascript/home.js"></script>
-
-    <!-- Bootstrap -->
+    <!-- Bootstrap and jQuery (keep both jQuery scripts included)-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/javascript/auth.js"></script>
+    <script src="assets/javascript/home.js"></script>
 
     <!-- API call; may need to clean up by moving to its own file later -->
     <script type="text/javascript">
