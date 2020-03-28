@@ -6,20 +6,22 @@ const setupUI = (user) => {
         // account info
         $('.accountDetails').html(`<div>Logged in as: ${user.email}</div>`);
         $('#userEmail').html(user.email);
-        $('#searchSubmit').show();
+        // $('#searchSubmit').show();
+        // $('#customRadio').show();
         loggedInLinks.forEach(item => item.style.display = 'block');
         loggedOutLinks.forEach(item => item.style.display = 'none');
     } else {
         // hide account info
         $('.accountDetails').html('');
-        $('#searchSubmit').hide();
+        // $('#searchSubmit').hide();
+        // $('#customRadio').hide();
         loggedInLinks.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block');
     }
 }
 
 // getting data
-db.collection('userSavedSearches').where('user', '==', 'blah@blah.com').get().then((snapshot) => {
+db.collection('userSavedSearches').where('brand', '==', 'Jif').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         console.log(doc.data());
     })
@@ -35,6 +37,9 @@ $("#searchSubmit").on("click", (e) => {
         brand: $('#apiBrand').html(),
         category: $('#apiCategory').html(),
         contents: $('#apiContents').html(),
-        timeStamp: $('#timeStamp').html()
+        timeStamp: $('#timeStamp').html(),
+        relevancy: $('#relevancyDD option:selected').text(),
+        comment: $('#commentText').val(),
+        reaction: $('#severityDD option:selected').text()
     })
 })
