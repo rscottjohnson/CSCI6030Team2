@@ -38,6 +38,7 @@ $("#searchSubmit").on("click", (e) => {
         category: $('#apiCategory').html(),
         contents: $('#apiContents').html(),
         timeStamp: $('#timeStamp').html(),
+        relevancy: $('#relevancyDD option:selected').text(),
         comment: $('#commentText').val(),
         reaction: $('#severityDD option:selected').text()
     })

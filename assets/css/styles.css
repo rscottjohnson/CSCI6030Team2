@@ -81,6 +81,6 @@ pre {
     background-color: #EAECEE;
 }
 
-.htmlDropdown {
+.relevancyDropdown, .severityDropdown {
     margin: 15px 0px 5px 0px;
 }
