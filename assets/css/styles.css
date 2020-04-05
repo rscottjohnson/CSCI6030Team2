@@ -1,5 +1,29 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background: #813631; */
+    margin-bottom: 65px;
+}
+
 #contentSubmit {
     margin: 20px 0px 10px 0px;
+}
+
+.jumbotron {
+    background: url("../images/joanna-kosinska-BteMcldTQVo-unsplash.jpg") center;
+    background-size: cover;
+    /* height: 100%; */
+    padding: 2% 5% 2% 5%;
+}
+
+.jumbotron-search {
+    /* padding: 0px 10px 150px 10px; */
+    /* padding: 0% 0% 0% 10%; */
+    /* width: 400px; */
 }
 
 #qrText {
@@ -27,6 +51,7 @@
 
 #contentInput, #labelInput {
     margin: 10px 5px 10px 0px;
+    width: 500px;
 }
 
 #genArea {
@@ -84,3 +109,17 @@ pre {
 .relevancyDropdown, .severityDropdown {
     margin: 15px 0px 5px 0px;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 65px;
+    line-height: 20px;
+    width: 100%;
+    /* background-color: #6ADBE4; */
+    color: #34495E;
+    text-align: center;
+    font-size: 14px;
+    /* border-top: 5px solid #FBFBFB; */
+    font-family: 'Roboto', sans-serif;
+  }
