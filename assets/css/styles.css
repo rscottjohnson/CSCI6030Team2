@@ -38,6 +38,10 @@ pre {
     white-space: pre-wrap;
 }
 
+#searchSubmit {
+    width: 200px;
+}
+
 .loginError {
     color: #EC7063;
     text-align: center;
