@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
@@ -32,6 +33,23 @@
                 <a class="nav-link" data-toggle="modal" data-target="#signUpModal" href="#">Signup</a>
             </li>
         </ul>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to NISSE!</h1>
+            <p class="lead">NISSE is the Nutritional Ingredient Scanner/Search Engine</p>
+            <hr class="my-4">
+            <p>Enter a food UPC Code or search term below to get started.</p>
+            <p class="lead">
+                <div class="input-group" id="contentInput">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Input (required)</span>
+                    </div>
+                    <textarea id="content" class="form-control" aria-label="textInput"></textarea>
+                </div>
+                <a href="#" id="contentSubmit" class="btn btn-primary">Search</a>
+                <div id="edamam-badge" data-color="white"></div>
+            </p>
+        </div>
 
         <!-- Sign Up Modal -->
         <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
@@ -125,90 +143,84 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <div class="card border-dark mb-3">
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">NISSE</h5>
-                        <p class="card-text">Nutritional Ingredient Scanner/Search Engine</p>
-                        <p class="card-text">
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6" id="genArea">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Search</h5>
-                        <p class="card-text">Enter UPC Code or search terms below.</p>
-                        <!-- Search term entry box -->
-                        <div class="input-group" id="contentInput">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Content (required)</span>
-                            </div>
-                            <textarea id="content" class="form-control" aria-label="textInput"></textarea>
-                        </div>
-                        <a href="#" id="contentSubmit" class="btn btn-primary">Search</a>
-                        <div id="edamam-badge" data-color="white"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Result</h5>
                         <p class="card-text">View results.</p>
+                        <hr class="logged-in">
                         <div id="apiResult">
-                            <div id="userEmailLabel">Logged in user: </div>
-                            <div id="userEmail"></div>
-                            <br>
-                            <div id="apiUPCTermLabel">UPC / Term: </div>
-                            <pre id="apiUPCTerm"></pre>
-                            <div id="apiLabelLabel">Label: </div>
-                            <pre id="apiLabel"></pre>
-                            <div id="apiBrandlabel">Brand: </div>
-                            <pre id="apiBrand"></pre>
-                            <div id="apiCategoryLabel">Category: </div>
-                            <pre id="apiCategory"></pre>
-                            <div id="apiContentsLabel">Contents: </div>
-                            <pre id="apiContents"></pre>
-                            <div id="timeStamp"></div>
-                            <hr class="logged-in">
-                            <!-- Dropdown button for relevancy -->
-                            <div class="relevancyDropdown logged-in">
-                                <h6 id="dropdownLabel">These results are (neutral, relevant, or nonrelevant):</h6>
-                                <select class="bootstrap-select" id="relevancyDD">
-                                    <option value="1" selected="selected">Neutral</option>
-                                    <option value="2">Relevant</option>
-                                    <option value="3">Nonrelevant</option>
-                                </select>
-                            </div>
-                            <!-- Comment area for user free text feedback -->
-                            <div class="input-group commentBox logged-in">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Comments (optional)</span>
+                            <!-- card column 1 -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div id="userEmailLabel">Logged in user: </div>
+                                    <div id="userEmail"></div>
+                                    <br>
+                                    <div id="apiUPCTermLabel">UPC / Term: </div>
+                                    <pre id="apiUPCTerm"></pre>
+                                    <div id="apiLabelLabel">Label: </div>
+                                    <pre id="apiLabel"></pre>
+                                    <div id="apiBrandlabel">Brand: </div>
+                                    <pre id="apiBrand"></pre>
+                                    <div id="apiCategoryLabel">Category: </div>
+                                    <pre id="apiCategory"></pre>
+                                    <div id="apiContentsLabel">Contents: </div>
+                                    <pre id="apiContents"></pre>
+                                    <div id="timeStamp"></div>
                                 </div>
-                                <textarea class="form-control" id="commentText" aria-label="With textarea"></textarea>
+                                <div class="col-sm-6">
+                                    <!-- Dropdown button for relevancy -->
+                                    <div class="relevancyDropdown logged-in">
+                                        <h6 id="dropdownLabel">These results are (neutral, relevant, or nonrelevant):
+                                        </h6>
+                                        <select class="bootstrap-select" id="relevancyDD">
+                                            <option value="1" selected="selected">Neutral</option>
+                                            <option value="2">Relevant</option>
+                                            <option value="3">Nonrelevant</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <div class="severityDropdown logged-in">
+                                        <h6 id="dropdownLabel">Reaction Severity (select if any):</h6>
+                                        <select class="bootstrap-select" id="severityDD">
+                                            <option value="1" selected="selected">None</option>
+                                            <option value="2">Mild</option>
+                                            <option value="3">Moderate</option>
+                                            <option value="4">Severe</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <div Comment area for user free text feedback -->
+                                        <div class="input-group commentBox logged-in">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Comments (optional)</span>
+                                            </div>
+                                            <textarea class="form-control" id="commentText"
+                                                aria-label="With textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <a href="#" id="searchSubmit" class="btn btn-primary logged-in">Save Search</a>
+                                </div>
                             </div>
-                            <div class="severityDropdown logged-in">
-                                <h6 id="dropdownLabel">Reaction Severity (select if any):</h6>
-                                <select class="bootstrap-select" id="severityDD">
-                                    <option value="1" selected="selected">None</option>
-                                    <option value="2">Mild</option>
-                                    <option value="3">Moderate</option>
-                                    <option value="4">Severe</option>
-                                </select>
-                            </div>
-                            <hr class="logged-in">
+                            <br>
                         </div>
-                        <br>
-                        <a href="#" id="searchSubmit" class="btn btn-primary logged-in">Save Search</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+    <!-- end of container -->
+    <footer class="footer">
+        <div class="container">
+            <div id="footer">
+                <br />
+                <p>The Nutritional Ingredient Scanner/Search Engine is the combined work of:</p> 
+                <p><a href="https://github.com/KelleClark">Kelle Clark</a>, <a href="https://github.com/cgembs">Caroline Gembs</a>, <a href="https://github.com/rscottjohnson">Scott Johnson</a>, Sara Khanjari, <a href="https://github.com/phmaa">Phoebe Maa</a>, and <a href="https://github.com/Jared-Mello">Jared Mello</a></p>
+                <p>NISSE &copy; 2020</p>
+                <p>Header photo by <a href="https://unsplash.com/@joannakosinska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joanna Kosinska</a> on <a href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+            </div>
+        </div>
+    </footer>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
@@ -216,7 +228,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use -->
-     <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
 
     <script>
         // Your web app's Firebase configuration
