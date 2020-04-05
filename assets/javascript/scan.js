@@ -1,5 +1,5 @@
 // Taken from the example at https://ourcodeworld.com/articles/read/460/how-to-create-a-live-barcode-scanner-using-the-webcam-in-javascript
-// Uses the QuaggaJS JavaScript scanner library
+// Uses the QuaggaJS JavaScript scanner library at https://serratus.github.io/quaggaJS/
 
 var _scannerIsRunning = false;
 
