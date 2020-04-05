@@ -9,8 +9,8 @@ body {
     margin-bottom: 65px;
 }
 
-#contentSubmit {
-    margin: 20px 0px 10px 0px;
+#contentSubmit, #btn {
+    margin: 10px 20px 10px 0px;
 }
 
 #scanner-container {

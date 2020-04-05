@@ -38,7 +38,7 @@
             <h1 class="display-4">Welcome to NISSE!</h1>
             <p class="lead">NISSE is the Nutritional Ingredient Scanner/Search Engine</p>
             <hr class="my-4">
-            <p>Enter a food UPC Code or search term below to get started.</p>
+            <p>Enter a food UPC Code or search term below to get started.  To scan a UPC Code, hit the Scan Start / Stop button below.</p>
             <p class="lead">
                 <div class="input-group" id="contentInput">
                     <div class="input-group-prepend">
@@ -46,14 +46,15 @@
                     </div>
                     <textarea id="content" class="form-control" aria-label="textInput"></textarea>
                 </div>
-                <a href="#" id="contentSubmit" class="btn btn-primary">Search</a>
+                <a href="#" id="btn" class="btn btn-primary">Scan Start / Stop</a>
+                <!-- <input type="button" id="btn" value="Start/Stop the scanner" /> -->
+                <a href="#" id="contentSubmit" class="btn btn-success">Search</a>
                 <div id="edamam-badge" data-color="white"></div>
             </p>
         </div>
 
         <!-- Div to show the scanner -->
         <div id="scanner-container"></div>
-        <input type="button" id="btn" value="Start/Stop the scanner" />
 
         <!-- Sign Up Modal -->
         <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
