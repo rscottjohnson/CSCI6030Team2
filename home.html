@@ -9,7 +9,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
@@ -50,6 +50,10 @@
                 <div id="edamam-badge" data-color="white"></div>
             </p>
         </div>
+
+        <!-- Div to show the scanner -->
+        <div id="scanner-container"></div>
+        <input type="button" id="btn" value="Start/Stop the scanner" />
 
         <!-- Sign Up Modal -->
         <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
@@ -214,10 +218,17 @@
         <div class="container">
             <div id="footer">
                 <br />
-                <p>The Nutritional Ingredient Scanner/Search Engine is the combined work of:</p> 
-                <p><a href="https://github.com/KelleClark">Kelle Clark</a>, <a href="https://github.com/cgembs">Caroline Gembs</a>, <a href="https://github.com/rscottjohnson">Scott Johnson</a>, Sara Khanjari, <a href="https://github.com/phmaa">Phoebe Maa</a>, and <a href="https://github.com/Jared-Mello">Jared Mello</a></p>
+                <p>The Nutritional Ingredient Scanner/Search Engine is the combined work of:</p>
+                <p><a href="https://github.com/KelleClark">Kelle Clark</a>, <a href="https://github.com/cgembs">Caroline
+                        Gembs</a>, <a href="https://github.com/rscottjohnson">Scott Johnson</a>, Sara Khanjari, <a
+                        href="https://github.com/phmaa">Phoebe Maa</a>, and <a
+                        href="https://github.com/Jared-Mello">Jared Mello</a></p>
                 <p>NISSE &copy; 2020</p>
-                <p>Header photo by <a href="https://unsplash.com/@joannakosinska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joanna Kosinska</a> on <a href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                <p>Header photo by <a
+                        href="https://unsplash.com/@joannakosinska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joanna
+                        Kosinska</a> on <a
+                        href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -261,11 +272,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <!-- QuaggaJS scanner library -->
+    <script type="text/javascript" src="assets/javascript/libraries/serratus-quaggaJS-862df88/dist/quagga.min.js">
+    </script>
 
     <!-- Compiled and minified JavaScript -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></!-->
     <script src="assets/javascript/auth.js"></script>
     <script src="assets/javascript/home.js"></script>
+    <script src="assets/javascript/scan.js"></script>
 
     <!-- API call; may need to clean up by moving to its own file later -->
     <script type="text/javascript">

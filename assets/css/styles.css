@@ -13,6 +13,10 @@ body {
     margin: 20px 0px 10px 0px;
 }
 
+#scanner-container {
+    /* width: 400px; */
+}
+
 .jumbotron {
     background: url("../images/joanna-kosinska-BteMcldTQVo-unsplash.jpg") center;
     background-size: cover;
