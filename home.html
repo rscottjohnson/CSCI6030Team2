@@ -38,7 +38,7 @@
             <h1 class="display-4">Welcome to NISSE!</h1>
             <p class="lead">NISSE is the Nutritional Ingredient Scanner/Search Engine</p>
             <hr class="my-4">
-            <p>Enter a food UPC Code or search term below to get started.  To scan a UPC Code, hit the Scan Start / Stop button below.</p>
+            <p id="instrText">Enter a food UPC Code or search term below to get started.  To scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner window.</p>
             <p class="lead">
                 <div class="input-group" id="contentInput">
                     <div class="input-group-prepend">
@@ -68,7 +68,7 @@
                     <div class="modal-body">
                         <p>Sign up for a new NISSE account.</p>
                     </div>
-                    <form>
+                    <form id="signUpForm">
                         <div class="form-group" id="signup-form">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp"
@@ -103,7 +103,7 @@
                     <div class="modal-body">
                         <p>Log in to your NISSE account.</p>
                     </div>
-                    <form>
+                    <form id="logInForm">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp"

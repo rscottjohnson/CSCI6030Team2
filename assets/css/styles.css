@@ -29,9 +29,21 @@ body {
     font-weight: 700;
 }
 
+#instrText {
+    width: 750px;
+}
+
 #contentInput, #labelInput {
     margin: 10px 5px 10px 0px;
     width: 500px;
+}
+
+#signUpForm, #logInForm {
+    margin: 0px 20px 0px 20px;
+}
+
+#scanner-container {
+    margin: 0px 0px 20px 0px;;
 }
 
 #genArea {
