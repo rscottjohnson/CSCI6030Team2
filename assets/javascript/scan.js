@@ -10,8 +10,8 @@ var _scannerIsRunning = false;
                     type: "LiveStream",
                     target: document.querySelector('#scanner-container'),
                     constraints: {
-                        width: 200,
-                        height: 200,
+                        width: 260,
+                        height: 260,
                         facingMode: "environment"
                     },
                 },
