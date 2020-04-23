@@ -5,7 +5,6 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    /* background: #813631; */
     margin-bottom: 65px;
 }
 
@@ -14,7 +13,7 @@ body {
 }
 
 #scanner-container {
-    /* width: 400px; */
+    width: 400px;
 }
 
 .jumbotron {
@@ -30,12 +29,12 @@ body {
 }
 
 #instrText {
-    /* width: 70%; */
+    width: 70%;
 }
 
 #contentInput, #labelInput {
     margin: 10px 5px 10px 0px;
-    /* width: 500px; */
+    width: 60%;
 }
 
 #signUpForm, #logInForm {
