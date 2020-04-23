@@ -25,9 +25,9 @@
             <li class="nav-item logged-in" style="display:none">
                 <a class="nav-link" id="logoutSubmit" href="#">Logout</a>
             </li>
-            <li class="nav-item logged-in" style="display:none">
+            <!-- <li class="nav-item logged-in" style="display:none">
                 <a class="nav-link" href="#">Enter Foods</a>
-            </li>
+            </li> -->
             <li class="nav-item logged-out" style="display:none">
                 <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
             </li>
@@ -40,8 +40,8 @@
             <h1 class="display-4">Welcome to NISSE!</h1>
             <p class="lead">NISSE is the Nutritional Ingredient Scanner/Search Engine</p>
             <hr class="my-4">
-            <p id="instrText">Enter a food UPC Code or search term below to get started. To scan a UPC Code, hit the
-                Scan Start / Stop button below and align a UPC Code in the scanner window.</p>
+            <!-- <p id="instrText">Enter a food UPC Code or search term below to get started. To scan a UPC Code, hit the
+                Scan Start / Stop button below and align a UPC Code in the scanner window.</p> -->
             <!-- <p class="lead">
                 <div class="input-group" id="contentInput">
                     <div class="input-group-prepend">
@@ -60,9 +60,11 @@
             <div class="col">
                 <form>
                     <div class="form-group">
-                        <label for="FormControlInput1">Search</label>
-                        <input type="text" class="form-control" id="FormControlInput1"
-                            placeholder="044000030377 or nabisco wheat thins">
+                        <!-- <h4 id="instrText1">Enter a food UPC Code or search term below to get started.</h4> -->
+                        <!-- <h5 id="instrText2">To scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner window.</h5> -->
+                        <label for="FormControlInput1">Enter a food UPC Code or search term below to get started.  To scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner window.</label>
+                        <input type="text" class="form-control" id="content"
+                            placeholder="example: 044000030377 or nabisco wheat thins">
                     </div>
                     <a href="#" id="btn" class="btn btn-primary">Scan Start / Stop</a>
                     <a href="#" id="contentSubmit" class="btn btn-success">Search</a>
