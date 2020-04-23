@@ -92,7 +92,11 @@ var _scannerIsRunning = false;
             if (_scannerIsRunning) {
                 Quagga.stop();
                 _scannerIsRunning = false;
+                $("#scanner-container").hide();
             } else {
+                if ($("#scanner-container").is(":hidden")){
+                    $("#scanner-container").show();
+                }
                 startScanner();
             }
         }, false);

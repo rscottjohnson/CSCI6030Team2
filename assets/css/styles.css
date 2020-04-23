@@ -12,9 +12,9 @@ body {
     margin: 10px 20px 10px 0px;
 }
 
-#scanner-container {
+/* #scanner-container {
     width: 400px;
-}
+} */
 
 .jumbotron-custom {
     /* background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("../images/joanna-kosinska-BteMcldTQVo-unsplash.jpg"); */
@@ -27,24 +27,21 @@ body {
     background-size: cover;
     background-position: center center;
     border-radius: 6px;
-    /* height: 100%; */
     padding: 2% 5% 2% 5%;
     color: white;
-    /* opacity: 0.5; */
 }
 
 .display-4, .lead {
     font-weight: bold;
 }
 
+.lead {
+    font-size: 30px;
+}
+
 .title {
     margin: 10px 10px 0px 10px;
     font-weight: 700;
-}
-
-#instrText {
-    color: #79CA38;
-    /* width: 70%; */
 }
 
 #contentInput, #labelInput {
