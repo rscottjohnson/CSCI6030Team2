@@ -11,7 +11,7 @@ var _scannerIsRunning = false;
                     target: document.querySelector('#scanner-container'),
                     constraints: {
                         width: 360,
-                        height: 200,
+                        height: 360,
                         facingMode: "environment"
                     },
                 },
