@@ -40,8 +40,9 @@
             <h1 class="display-4">Welcome to NISSE!</h1>
             <p class="lead">NISSE is the Nutritional Ingredient Scanner/Search Engine</p>
             <hr class="my-4">
-            <p id="instrText">Enter a food UPC Code or search term below to get started.  To scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner window.</p>
-            <p class="lead">
+            <p id="instrText">Enter a food UPC Code or search term below to get started. To scan a UPC Code, hit the
+                Scan Start / Stop button below and align a UPC Code in the scanner window.</p>
+            <!-- <p class="lead">
                 <div class="input-group" id="contentInput">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Input (required)</span>
@@ -51,11 +52,33 @@
                 <a href="#" id="btn" class="btn btn-primary">Scan Start / Stop</a>
                 <a href="#" id="contentSubmit" class="btn btn-success">Search</a>
                 <div id="edamam-badge" data-color="white"></div>
-            </p>
+            </p> -->
+        </div>
+
+        <!-- Search bar -->
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <label for="FormControlInput1">Search</label>
+                        <input type="text" class="form-control" id="FormControlInput1"
+                            placeholder="044000030377 or nabisco wheat thins">
+                    </div>
+                    <a href="#" id="btn" class="btn btn-primary">Scan Start / Stop</a>
+                    <a href="#" id="contentSubmit" class="btn btn-success">Search</a>
+                    <div id="edamam-badge" data-color="white"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Scanner -->
+        <div class="row">
+            <div class="col-md-6">
+                <div id="scanner-container"></div>
+            </div>
         </div>
 
         <!-- Div to show the scanner -->
-        <div id="scanner-container"></div>
 
         <!-- Sign Up Modal -->
         <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
