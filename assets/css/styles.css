@@ -29,12 +29,12 @@ body {
 }
 
 #instrText {
-    width: 70%;
+    /* width: 70%; */
 }
 
 #contentInput, #labelInput {
     margin: 10px 5px 10px 0px;
-    width: 60%;
+    /* width: 60%; */
 }
 
 #signUpForm, #logInForm {
@@ -54,7 +54,7 @@ pre {
 }
 
 #searchSubmit {
-    width: 200px;
+    /* width: 200px; */
 }
 
 .loginError {
