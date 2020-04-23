@@ -57,12 +57,14 @@
 
         <!-- Search bar -->
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <form>
                     <div class="form-group">
                         <!-- <h4 id="instrText1">Enter a food UPC Code or search term below to get started.</h4> -->
                         <!-- <h5 id="instrText2">To scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner window.</h5> -->
-                        <label for="FormControlInput1">Enter a food UPC Code or search term below to get started.  To scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner window.</label>
+                        <label for="FormControlInput1">Enter a food UPC Code or search term below to get started. To
+                            scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner
+                            window.</label>
                         <input type="text" class="form-control" id="content"
                             placeholder="example: 044000030377 or nabisco wheat thins">
                     </div>
@@ -71,16 +73,10 @@
                     <div id="edamam-badge" data-color="white"></div>
                 </form>
             </div>
+            <!-- Scanner -->
+            <div class="col-md-6" id="scanner-container"></div>
         </div>
 
-        <!-- Scanner -->
-        <div class="row">
-            <div class="col-md-6">
-                <div id="scanner-container"></div>
-            </div>
-        </div>
-
-        <!-- Div to show the scanner -->
 
         <!-- Sign Up Modal -->
         <div class="modal" id="signUpModal" tabindex="-1" role="dialog">
@@ -100,7 +96,8 @@
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp"
                                 placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                anyone
                                 else.</small>
                         </div>
                         <div class="form-group">
@@ -173,7 +170,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Result</h5>
@@ -201,7 +198,8 @@
                                 <div class="col-sm-6">
                                     <!-- Dropdown button for relevancy -->
                                     <div class="relevancyDropdown logged-in">
-                                        <h6 id="dropdownLabel">These results are (neutral, relevant, or nonrelevant):
+                                        <h6 id="dropdownLabel">These results are (neutral, relevant, or
+                                            nonrelevant):
                                         </h6>
                                         <select class="bootstrap-select" id="relevancyDD">
                                             <option value="1" selected="selected">Neutral</option>
@@ -247,8 +245,8 @@
                 <br />
                 <p>The Nutritional Ingredient Scanner/Search Engine is the combined work of:</p>
                 <p><a href="https://github.com/KelleClark">Kelle Clark</a>, <a href="https://github.com/cgembs">Caroline
-                        Gembs</a>, <a href="https://github.com/rscottjohnson">Scott Johnson</a>, Sara Khanjari, <a
-                        href="https://github.com/phmaa">Phoebe Maa</a>, and <a
+                        Gembs</a>, <a href="https://github.com/rscottjohnson">Scott Johnson</a>, Sara Khanjari,
+                    <a href="https://github.com/phmaa">Phoebe Maa</a>, and <a
                         href="https://github.com/Jared-Mello">Jared Mello</a></p>
                 <p>NISSE &copy; 2020</p>
                 <p>Header photo by <a
