@@ -29,6 +29,7 @@ body {
     border-radius: 6px;
     padding: 2% 5% 2% 5%;
     color: white;
+    text-shadow: 2px 2px #000000;
 }
 
 .display-4, .lead {
