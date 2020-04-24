@@ -47,8 +47,6 @@
             <div class="col-md-6">
                 <form>
                     <div class="form-group">
-                        <!-- <h4 id="instrText1">Enter a food UPC Code or search term below to get started.</h4> -->
-                        <!-- <h5 id="instrText2">To scan a UPC Code, hit the Scan Start / Stop button below and align a UPC Code in the scanner window.</h5> -->
                         <label for="FormControlInput1">Enter a food UPC Code or search term and hit the Search button below</label>
                         <input type="text" class="form-control" id="content"
                             placeholder="example: 044000030377 or nabisco wheat thins">
@@ -164,28 +162,7 @@
                           </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Data Modal -->
-        <div class="modal" id="dataModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Saved Data</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h4>NISSE Account</h4>
-                        <div class="accountDetails"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" id="account-modal-close" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
