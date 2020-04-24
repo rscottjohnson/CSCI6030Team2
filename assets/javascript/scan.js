@@ -10,8 +10,8 @@ var _scannerIsRunning = false;
                     type: "LiveStream",
                     target: document.querySelector('#scanner-container'),
                     constraints: {
-                        width: 400,
-                        height: 125,
+                        width: 260,
+                        height: 260,
                         facingMode: "environment"
                     },
                 },
@@ -92,7 +92,11 @@ var _scannerIsRunning = false;
             if (_scannerIsRunning) {
                 Quagga.stop();
                 _scannerIsRunning = false;
+                $("#scanner-container").hide();
             } else {
+                if ($("#scanner-container").is(":hidden")){
+                    $("#scanner-container").show();
+                }
                 startScanner();
             }
         }, false);
