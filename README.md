@@ -1,5 +1,5 @@
 # Nutritional Ingredient Scanner / Search Engine (NISSE)
-NISSE aims to aid anyone who may be trying to verify food product ingredients (perhaps trying a new diet, avoiding certain ingredients due to food allergies and / or intolerances, etc.) quickly, accurately, and conveniently.  
+NISSE aims to aid anyone who may be trying to verify food product ingredients (perhaps trying a new diet, avoiding certain ingredients due to food allergies and / or intolerances, etc.) quickly, accurately, and conveniently.  The deployed application can be viewed at [nisseapp.herokuapp.com](https://nisseapp.herokuapp.com).
 
 ## Motivation
 NISSE is the chosen proposal from a selection of ideas for use as a means of applying the concepts learned in the East Carolina University (ECU) CSCI 6030 *Information Retrieval* course, and was developed by the members of *Group 2* (listed below in the *Credits*).  
@@ -17,7 +17,10 @@ Food item searches can be accomplished by:
 * Navigate to the newly cloned directory and open the `home.html` file
 
 ## Technology used
-NISSE was developed using HTML, CSS, and JavaScript, but leverages some other tools to bring functionality to its users:
+NISSE was developed using:
+* HTML
+* Bootstrap, CSS, and Google Fonts for styling
+* JavaScript, jQuery, and AJAX for functionality
 * [Edamam](https://www.edamam.com) (and specifically the Food Database API) is utilized as the larger collection for NISSE's searches
 * [Firebase](https://firebase.google.com) (and specifically the Cloud Firestore database) is used to:
     * house our user searches when a user elects to save a search
