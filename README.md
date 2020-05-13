@@ -1,5 +1,7 @@
 # Nutritional Ingredient Scanner / Search Engine (NISSE)
-NISSE aims to aid anyone who may be trying to verify food product ingredients (perhaps trying a new diet, avoiding certain ingredients due to food allergies and / or intolerances, etc.) quickly, accurately, and conveniently.  The deployed application can be viewed at [nisseapp.herokuapp.com](https://nisseapp.herokuapp.com).
+NISSE aims to aid anyone who may be trying to verify food product ingredients (perhaps trying a new diet, avoiding certain ingredients due to food allergies and / or intolerances, etc.) quickly, accurately, and conveniently.  The deployed application can be viewed at [nisseapp.herokuapp.com](https://nisseapp.herokuapp.com).  
+
+![NISSEScreenShot](/assets/images/NISSEScrnShot.png)
 
 ## Motivation
 NISSE is the chosen proposal from a selection of ideas for use as a means of applying the concepts learned in the East Carolina University (ECU) CSCI 6030 *Information Retrieval* course, and was developed by the members of *Group 2* (listed below in the *Credits*).  
