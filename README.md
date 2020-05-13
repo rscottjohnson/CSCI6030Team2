@@ -1,16 +1,28 @@
-# CSCI 6030 - Team 2 Project
+# Nutritional Ingredient Scanner / Search Engine (NISSE)
+NISSE aims to aid anyone who may be trying to verify food product ingredients (perhaps trying a new diet, avoiding certain ingredients due to food allergies and / or intolerances, etc.) quickly, accurately, and conveniently.  
 
 ## Motivation
-an app with easy user interface to type in a UPC code or scan in a UPC code of a product, recieve nutritional information about the product using the API from Edamame.  User's can save searches and this data is stored on Firebase (under Firestore) so that they can retrieve the data.
+NISSE is the chosen proposal from a selection of ideas for use as a means of applying the concepts learned in the East Carolina University (ECU) CSCI 6030 *Information Retrieval* course, and was developed by the members of *Group 2* (listed below in the *Credits*).  
 
 ## Project Usefulness
-Helps users with ingredient labels too small to read, identifies potential allergins in products, allows user to record reactions and their severity in one location
+NISSE helps users with food items whose ingredient labels may be too small to read, identifies potential allergens in products, and allows users to record reactions and their severity to a food item all in one location.  
+
+Food item searches can be accomplished by:
+* typing in a food's terms (example, *Peter Pan Peanut Butter*)
+* typing in a food item's UPC Code
+* scanning the food item's UPC Code using a smartphone camera or desktop / laptop webcam  
 
 ## Getting Started
-download home.html to device, double click. Should run as long as you have browser settings permissions set to allow localhost 4000
+* Start by cloning the repository to a local folder using the terminal command: `git clone https://github.com/rscottjohnson/CSCI6030Team2.git`
+* Navigate to the newly cloned directory and open the `home.html` file
 
 ## Technology used
-html, JS, Edamame project code for API get, firebase account for hosting and data management
-
+NISSE was developed using HTML, CSS, and JavaScript, but leverages some other tools to bring functionality to its users:
+* [Edamam](https://www.edamam.com) (and specifically the Food Database API) is utilized as the larger collection for NISSE's searches
+* [Firebase](https://firebase.google.com) (and specifically the Cloud Firestore database) is used to:
+    * house our user searches when a user elects to save a search
+    * provide the user authentication tools to support user account creation and user login / logout.
+* [QuaggaJS](https://serratus.github.io/quaggaJS/) is used to provide NISSE's scanner functionality
+  
 ## Credits
 Team 2 Project was created by [Kelle Clark](https://github.com/KelleClark), [Caroline Gembs](https://github.com/cgembs), [Scott Johnson](https://github.com/rscottjohnson), Sara Khanjari Nezhad Jooneghani, [Phoebe Maa](https://github.com/phmaa), and [Jared Mello](https://github.com/Jared-Mello).
