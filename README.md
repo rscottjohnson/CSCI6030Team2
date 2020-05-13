@@ -30,4 +30,4 @@ NISSE was developed using:
 * [QuaggaJS](https://serratus.github.io/quaggaJS/) is used to provide NISSE's scanner functionality
   
 ## Credits
-Team 2 Project was created by [Kelle Clark](https://github.com/KelleClark), [Caroline Gembs](https://github.com/cgembs), [Scott Johnson](https://github.com/rscottjohnson), Sara Khanjari Nezhad Jooneghani, [Phoebe Maa](https://github.com/phmaa), and [Jared Mello](https://github.com/Jared-Mello).
+NISSE was created by [Kelle Clark](https://github.com/KelleClark), [Caroline Gembs](https://github.com/cgembs), [Scott Johnson](https://github.com/rscottjohnson), Sara Khanjari Nezhad Jooneghani, [Phoebe Maa](https://github.com/phmaa), and [Jared Mello](https://github.com/Jared-Mello).
